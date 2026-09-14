@@ -1,25 +1,25 @@
 import shieldCheck from './ShieldCheck.svg';
-import truck from './truck.svg';
+import truck from './Truck.svg';
 import creditCard from './CreditCard.svg';
-import logoEconverse from './logo.svg';
+import logoEconverse from './Logo.svg';
 import search from './MagnifyingGlass.svg';
 import user from './UserCircle.svg';
-import heart from './heart.svg';
+import heart from './Heart.svg';
 import cart from './ShoppingCart.svg';
 import myOrders from './Group.svg';
 import crown from './CrownSimple.svg'
-import tech from './image.png'
-import supermarket from './supermercados 1.svg'
-import drinks from './whiskey.svg'
-import tools from './ferramentas.svg'
-import health from './cuidados-de-saude 1.svg'
-import fitness from './corrida 1.svg'
-import fashion from './moda 1.svg'
-import linkedin from './linkedin.svg'
-import facebook from './facebook.svg'
-import instagram from './instagram.svg'
-import arrowLeft from './left.svg';
-import arrowRight from './right.svg';
+import tech from './Image.png'
+import supermarket from './Supermercados 1.svg'
+import drinks from './Whiskey.svg'
+import tools from './Ferramentas.svg'
+import health from './Cuidados-de-saude 1.svg'
+import fitness from './Corrida 1.svg'
+import fashion from './Moda 1.svg'
+import linkedin from './Linkedin.svg'
+import facebook from './Facebook.svg'
+import instagram from './Instagram.svg'
+import arrowLeft from './Left.svg';
+import arrowRight from './Right.svg';
 
 
 export const icons = {
