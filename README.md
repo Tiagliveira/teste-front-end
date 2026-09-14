@@ -1,8 +1,12 @@
 # Teste Front-End - Econverse
+
 <p align="center">
-<img src="./src/assets/images/image.png" alt="Preview do Projeto" width="600" height="400" style="border: 2px solid #959596; border-radius: 10px;" />
+  <a href="[COLE_AQUI_O_LINK_DO_SEU_PROJETO_ONLINE](https://devclub-institucional-front-end-teste-econverse.5scnjc.easypanel.host/)" target="_blank">
+    <img src="./src/assets/images/image.png" alt="Preview do Projeto" width="400" height="200" style="border: 2px solid #959596; border-radius: 10px;" />
+  </a>
 </p>
-Projeto desenvolvido em React, TypeScript e SCSS para o teste técnico da Econverse.
+
+Projeto desenvolvido em React, TypeScript e SCSS para o teste técnico da Econverse. Clique Aqui!👆
 
 ---
 
