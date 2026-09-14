@@ -5,27 +5,22 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 
-# variável de ambiente .
+# Injeção da variável de ambiente no build
 ARG VITE_API_URL
 ENV VITE_API_URL=$VITE_API_URL
 
 RUN npm run build
 
-# Estágio 2: Nginx como servidor e Proxy Reverso
+# Estágio 2: Nginx para servir arquivos estáticos (SPA)
 FROM nginx:alpine
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Configuração do Nginx com fallback de SPA e Proxy 
 RUN echo 'server { \
     listen 80; \
     location / { \
     root /usr/share/nginx/html; \
     index index.html index.htm; \
     try_files $uri $uri/ /index.html; \
-    } \
-    location /api-econverse/ { \
-    proxy_pass https://teste-front-end-junior.econverse.com.br/; \
-    proxy_ssl_server_name on; \
     } \
     }' > /etc/nginx/conf.d/default.conf
 
