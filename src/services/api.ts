@@ -1,9 +1,13 @@
 import type { ApiResponse, Product } from '../types/types';
 
-const API_URL = "https://devclub-institucional-dockerfile.5scnjc.easypanel.host/produtos.json";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const fetchProducts = async (): Promise<Product[]> => {
     try {
+        if (!API_URL) {
+            throw new Error('VITE_API_URL não está definida no ambiente.');
+        }
+
         const response = await fetch(API_URL, {
             headers: {
                 'Accept': 'application/json'
