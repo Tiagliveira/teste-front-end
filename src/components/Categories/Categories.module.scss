@@ -1,0 +1,71 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.categories {
+  margin: 39px 0 0 139.5px;
+  width: 1160px;
+
+  .container { 
+    @include flex-between;
+    gap: 42px; 
+
+    @include mobile {
+      overflow-x: auto;
+      padding: 0 20px;
+      justify-content: flex-start;
+    }
+  }
+
+  .categoryCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    .iconBox {
+      width: 128px;
+      height: 128px;
+      background-color: $color-bg-card; 
+      border-radius: 10px;
+      @include flex-center;
+      box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.03);
+      transition: background-color 0.2s ease, box-shadow 0.2s ease;
+
+      img {
+        width: 61px;
+        height: 61px;
+        object-fit: contain;
+        transition: filter 0.2s ease;
+      }
+    }
+
+    span {
+      font-family: $font-main;
+      font-size: $font-size-md; 
+      font-weight: $font-weight-medium;
+      color: $color-text-muted; 
+      transition: color 0.2s ease, font-weight 0.2s ease;
+    }
+
+    &:hover,
+    &.active {
+      .iconBox {
+        background-color: $color-bg-main;
+        box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.08);
+
+        img {
+          
+          filter: invert(15%) sepia(95%) saturate(4500%) hue-rotate(248deg) brightness(80%) contrast(110%);
+        }
+      }
+
+      span {
+        color: $color-brand-purple; 
+        font-weight: $font-weight-semi;
+      }
+    }
+  }
+}

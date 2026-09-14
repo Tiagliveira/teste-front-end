@@ -1,0 +1,10 @@
+@use './abstracts/variables' as *;
+@use './base/reset';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.containerGeneral {
+  width: 100%;
+  max-width: $container-general;
+  font-family: $font-main;
+  margin: 0 auto;
+}

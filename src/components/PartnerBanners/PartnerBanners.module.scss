@@ -1,0 +1,85 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.partnerBanners {
+  width: 1281px;
+  height: 350px;
+  margin-top: 90px;
+  margin-left: 79px;
+
+  .container {
+    width: $container-standard;
+    margin: 0 auto;
+    display: flex;
+    gap: 13px;
+
+  }
+
+  .card {
+    flex: 1;
+    width: 634px;
+    height: 350px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+
+    background-image: url('./../../assets/images/Mask Group.svg'); 
+    background-size: cover;
+    background-position: center;
+
+    .overlay {
+      height: 261px;
+      margin-top: 89px;
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 85.04%);
+      opacity: 0.8;
+      z-index: 1;
+    }
+
+    .content {
+      height: 261px;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      margin-top: 55px;
+
+      h3 {
+        font-family: $font-main;
+        font-size: $font-size-xxl;
+        font-weight: $font-weight-bold;
+        color:$color-text-light;
+        margin-top: 55px;
+        margin-left: 44.18px;
+        gap: 25px;
+        
+      }
+
+      p {
+        font-family: $font-main;
+        font-size: $font-size-md;
+        font-weight: $font-weight-regular;
+        color: $color-text-light;
+        width: 199.92px;
+        margin-left: 44.18px;
+        margin-bottom: 35px;
+      }
+
+          button {
+        @include btn(
+          $bg: $primary-yellow,
+          $color: $text-dark,
+          $padding: 12px 32px,
+          $radius: 6px,
+          $size: $font-size-md,
+          $weight: $font-weight-bold,
+        );
+        width: 144.69px;
+        margin-left: 44.18px;
+      }
+    }
+  }
+}

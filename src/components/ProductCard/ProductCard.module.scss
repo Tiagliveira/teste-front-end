@@ -1,0 +1,94 @@
+@use './../../styles/abstracts/variables' as *;
+@use './../../styles/abstracts/mixins' as *;
+
+.card {
+  width: 304px;
+  height: 500px;
+  background-color: $bg-card;
+  border-radius: 10px;
+  box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid $color-border-medium;
+  z-index: 2;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .content {
+    width: 278.1px;
+    height: 467px;
+    margin: 17px 12.39px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .imageBox {
+    width: 278.1px;
+    height: 228px;
+    @include flex-center;
+    margin-bottom: 12px;
+
+    img {
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .description {
+    font-size: 15px;
+    color: $color-text-tertiary;
+    font-weight: 300;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .oldPrice {
+    font-size: $font-size-md;
+    font-weight: $font-weight-regular;
+    color: $color-text-quaternary;
+    text-decoration: line-through;
+    margin-bottom: 2px;
+  }
+
+  .price {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $color-text-secondary;
+    margin-bottom: 4px;
+  }
+
+  .installments {
+    font-size: $font-size-xs;
+     font-weight: $font-weight-regular;
+    color: $color-text-tertiary;
+    margin-bottom: 6px;
+  }
+
+  .freeShipping {
+    font-size: $font-size-xs;
+    color: $primary-purple;
+    font-weight: $font-weight-regular;
+    margin-bottom: 14px;
+
+    &.activePink {
+      color: $primary-pink;
+    }
+  
+  }
+
+  .buyButton {
+    @include btn($bg: $primary-purple, $color: $color-text-light);
+    width: 275.85px; 
+    height: 44px;
+    margin: 0 auto;
+ 
+    &.activePink {
+      background-color: $primary-pink;
+    }
+  }
+}

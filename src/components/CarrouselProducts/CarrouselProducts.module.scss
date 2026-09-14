@@ -1,0 +1,118 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.carrouselProducts {
+  width: 1364px;
+  margin: 90px auto 0;
+
+  .container {
+    width: $container-standard; 
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .headerTitle {
+    @include flex-center;
+    gap: 24px;
+    margin-bottom: 16px;
+
+    .line {
+      flex: 1;
+      height: 1px;
+      background-color: $color-border-separator;
+    }
+
+    h2 {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $color-brand-blue;
+      white-space: nowrap;
+      transition: color 0.2s ease;
+    }
+  }
+
+  .simpleLinkWrapper {
+    text-align: center;
+    margin-bottom: 24px;
+
+    a {
+      font-family: $font-main;
+      font-size: 15px;
+      font-weight: $font-weight-bold;
+      color: $color-text-secondary;
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover,
+      &.activeLink {
+        color: $primary-pink;
+      }
+    }
+  }
+
+  .categoriesTab {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: $container-standard;
+    border: 1px solid $color-border-rectangle;
+    margin-bottom: 30px;
+    list-style: none;
+
+    li {
+      flex: 1;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 40px;
+        padding: 0 10px;
+        font-family: $font-main;
+        font-size: $font-size-md;
+        font-weight: $font-weight-regular;
+        color: $color-text-secondary;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-right: 1px solid $color-border-rectangle;
+        background: transparent;
+        cursor: pointer;
+        transition: color 0.2s ease, font-weight 0.2s ease;
+
+        &:hover,
+        &.active {
+          color: $color-brand-blue;
+          font-weight: $font-weight-bold;
+        }
+      }
+
+      &:last-child a {
+        border-right: none;
+      }
+    }
+  }
+
+  .loadingText {
+    text-align: center;
+    font-size: $font-size-md;
+    color: $text-muted;
+    padding: 40px 0;
+  }
+
+  .errorText {
+  text-align: center;
+  font-size: $font-size-md;
+  color: $primary-pink;
+  font-weight: $font-weight-medium;
+  padding: 40px 0;
+}
+
+  &.showAllActive {
+    .headerTitle {
+      h2 {
+        color: $primary-pink;
+      }
+    }
+  }
+}

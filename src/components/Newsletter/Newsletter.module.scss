@@ -1,0 +1,110 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.newsletter {
+  width: $container-general;
+  height: 162px;
+  background-color: $bg-purple; 
+  margin-left: 0.5px;
+  margin-top: 90px;
+ 
+  
+
+  .container {
+    width: $container-standard;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 80.5px;
+  }
+
+  .textGroup {
+    width: 515px;
+    height: 82px;
+    margin-top: 40px;
+
+    h2 {
+      color: $color-text-light;
+      font-family: 'Outfit', sans-serif;
+      font-size: $font-size-xl;
+      font-weight: $font-weight-semi;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-family: $font-main;
+      font-size: $font-size-sm; 
+      font-weight: 300;
+      font-style: Light;
+      color: $bg-gray;
+    }
+  }
+
+  .formGroup {
+    width: 639px;
+    height: 71px;
+    margin-top: 45.5px;
+
+    .inputsWrapper {
+
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      input[type='text'],
+      input[type='email'] {
+        width: 233px;
+        height: 42px;
+        background-color: $bg-card;
+        border: 1px solid $border-medium;
+        border-radius: 6px;
+        padding: 8px 24px 12px 24px;
+        gap: 10px;
+        outline: none;
+        font-family: $font-main;
+        font-size: $font-size-sm;
+        color: $color-text-secondary;
+        margin-right: 10px;
+
+
+        &::placeholder {
+          color: $color-placeholder;
+        }
+      }
+
+      button {
+        @include btn(
+          $bg: $primary-yellow,
+          $color: $text-dark,
+          $radius: 8px,
+          $size: $font-size-sm,
+          $weight: $font-weight-semi
+        );
+
+          width: 153px;
+          height: 42px;
+
+        &:hover {
+          filter: brightness(0.92);
+        }
+      }
+    }
+
+    .checkboxLabel {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-family: $font-main;
+      font-size: 0.8125rem; 
+      color: $bg-card;
+
+      input[type='checkbox'] {
+        accent-color: $primary-yellow;
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}

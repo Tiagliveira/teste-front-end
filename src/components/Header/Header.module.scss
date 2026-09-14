@@ -1,0 +1,201 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.header {
+  width: $container-standard;
+  height: 144px;
+  margin-left: 80px;
+  background-color: $bg-card;
+  font-family: $font-main;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.topBar {
+  @include flex-center;
+  width: $container-standard;
+  height: 32px;
+  
+  .containerItens {
+    @include flex-center;
+    width: 764px;
+    height: 20px;
+    margin-top: 6px;
+    gap: 119px;
+
+    @include mobile {
+      gap: 16px;
+      justify-content: space-between;
+    }
+  }
+
+  .benefitItem {
+    @include flex-center;
+    height: 20px;
+    gap: 2px;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    p {
+      margin-top: 1px;
+      font-size: $font-size-xs;
+      color: $color-text-muted;
+      font-weight:$font-weight-medium;
+      text-align: center;
+
+      span {
+        color: $color-brand-purple; 
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.mainHeader {
+  width: $container-standard;
+  height: 72px;
+
+  border-top: 2px solid $border-primary;
+  border-bottom: 2px solid $border-primary;
+
+  .container {
+    @include flex-between;
+    margin: 10px 0;
+  }
+}
+  .logo {
+    width: 139px;
+    height: 41.3px;
+    display: flex;
+
+    img {
+      width: 139px;
+    }
+  }
+
+  .searchBar {
+    @include flex-between;
+    flex: 1;
+    max-width: 630px;
+    height: 48px;
+    margin-left: 68px;
+    background-color: $bg-gray;
+    border-radius: 10px;
+    padding: 0 20px;
+
+    input {
+      width: 100%;
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: $font-size-sm;
+      color: $color-text-primary;
+      font-weight: 500;
+
+      &::placeholder {
+        color: $color-text-muted;
+      }
+    }
+
+    button {
+      @include flex-center;
+      border: none;
+      background: transparent;
+      transition: opacity $transition-default;
+      outline: none;
+
+      &:hover {
+        opacity: 0.7;
+      
+      }
+
+      img {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+
+  .userActions {
+    @include flex-center;
+    width: 216px;
+    height: 32px;
+    gap: 32px;
+    
+
+    a {
+      @include flex-center;
+      transition: opacity $transition-default;
+      padding-bottom: 4px;
+
+      &:hover {
+        opacity: 0.7;
+      
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+
+.navMenu {
+  width: $container-standard;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+
+  box-shadow: 0px 2px 5px rgba(57, 48, 19, 0.12);
+
+  .containerNavLink {
+    width: 1141px;
+    height: 20px;
+    gap: 91px;
+    padding-left: 69px;
+  }
+
+  ul {
+    @include flex-between;
+    list-style: none;
+    margin: 0;
+
+    li a {
+      @include flex-center;
+      height: 18px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $text-muted;
+      transition: color 0.2s ease;
+      letter-spacing: 0.4px;
+      text-decoration: none;
+      gap: 2px;
+      
+      
+
+      img {
+        width: 18px;
+        height: 18px;
+        transition: filter 0.2s ease, opacity 0.2s ease;
+      }
+
+      &:hover,
+      &.active {
+        color: $primary-purple; 
+
+        &.active img,
+        &:hover img {
+    filter: drop-shadow(0px 0px 0px $primary-purple);
+    filter: invert(16%) sepia(89%) saturate(7500%) hue-rotate(244deg) brightness(70%) contrast(150%);
+  }
+      }
+    }
+  }
+}

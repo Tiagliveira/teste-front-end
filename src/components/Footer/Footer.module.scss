@@ -1,0 +1,161 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.footer {
+  width: $container-general;
+
+  .mainContent {
+    width: $container-general;
+    height: 282px;
+    background-color: $color-bg-card; 
+    padding: 42px 80px;
+    gap: 90px;
+    top: 162px;
+    left: 0.5px;
+  }
+
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: flex-start;
+
+  }
+
+  .brandCol {
+    width: 354px;
+    height: 159px;
+    gap: 27px;
+    display: flex;
+    flex-direction: column;
+
+    .brandContent {
+      width: 354px;
+      height: 108px;
+     
+    }
+
+    .logo {
+      max-width: 164px;
+      height: 48px;
+      margin-bottom: 18px;
+    }
+
+    .brandDescription {
+      font-family: $font-main;
+      font-size: $font-size-sm;
+      font-weight: 300;
+      font-style: Light;
+      color: $color-text-tertiary;
+      line-height: 1;
+
+    }
+
+    .socialIcons {
+      width: 124px;
+      height: 24px;
+      @include flex-center;
+      gap: 26px;
+
+      a {
+        @include flex-center;
+        transition: opacity 0.2s ease;
+
+        img {
+          width: 24px;
+          height: 24px;
+        }
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  .divider {
+    width: 1px;
+    height: 198px;
+    background-color: $boder-larger;
+    opacity: 0.18;
+    margin: 0 55px ;
+  }
+
+  .linksNav {
+    width: 631px;
+    height: 116px;
+    display: flex;
+    gap: 100px;
+
+    h4 {
+        font-family: $font-main;
+        font-size: $font-size-md;
+        font-weight: $font-weight-bold;
+        color: $color-text-medium;
+        opacity: 0.71;
+      }
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        li a {
+          font-family: $font-main;
+          font-size: 13px;
+          font-weight: $font-weight-regular;
+          font-style: normal;
+          color: $color-text-medium;
+          opacity: 0.71;
+          transition: color 0.2s ease;
+
+          &:hover {
+            color: $primary-purple;
+          }
+        }
+      }
+
+    .linkGroupcorporate {
+      width: 121px;
+      height: 116px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .linkGroupabout {
+      width: 150px;
+      height: 116px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .linkGroupterms {
+      width: 160px;
+      height: 116px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+  }
+
+  .copyrightBar {
+    width: $container-general;
+    height: 16.84px;
+    background-color: $bg-card;
+    text-align: center;
+    @include flex-center;
+    padding: 20px 0;
+
+    p {
+      font-family: $font-main;
+      line-height: 20px;
+      font-size: 13px;
+      color: $color-text-tertiary
+    }
+  }
+}

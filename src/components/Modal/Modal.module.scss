@@ -1,0 +1,166 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  @include flex-center;
+  z-index: 999;
+  padding: 20px;
+}
+
+.modalContent {
+  background-color: $bg-card;
+  width: 769px; 
+  height: 299.26px;
+  border-radius: 6px;
+  padding: 30px 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+
+  @include mobile {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: $font-size-lg;
+    color: $color-btn;
+    font-weight: $font-weight-semi;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-text-quaternary;
+    }
+  }
+
+  .productImage {
+    width: 247px;
+    height: 192.20px;
+    flex: 1;
+    @include flex-center;
+
+    img {
+      width: 247px;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  .productDetails {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      font-family: $font-main;
+      font-size: $font-size-lg; 
+      font-weight: $font-weight-regular;
+      color: $color-text-tertiary;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 18px;
+    }
+
+    .price {
+      font-family: $font-main;
+      font-size: $font-size-lg;
+      font-weight: $font-weight-semi;
+      color: $color-text-tertiary;
+      letter-spacing: 0.5px;
+      margin-bottom: 32px;
+    }
+
+    .description {
+      width:290px ;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 10px;
+      color: $color-text-muted;
+      font-weight: $font-weight-medium ;
+      line-height: 1.5;
+      font-style: normal;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .moreDetails {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 11px;
+      font-weight: $font-weight-bold;
+      color: $color-brand-blue;
+      text-decoration: none;
+      margin-bottom: 24px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .actionGroup {
+      width: 310px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      .counter {
+        background-color: $bg-card;
+        width: 90.54px;
+        height: 19.64px;
+        display: flex;
+        align-items: center;
+        border: 1px solid $border-Misto-solid;
+        border-radius: 4px;
+        height: 36px;
+        padding: 0 4px;
+
+        button {
+          background: transparent;
+          border: none;
+          font-size: 1.125rem;
+          color: $bg-purple;
+          width: 28px;
+          height: 100%;
+          cursor: pointer;
+        }
+
+        span {
+          font-family: $font-main;
+          font-size: $font-size-md;
+          font-weight: $font-weight-medium;
+          line-height: 16px;
+          color: $bg-purple;
+          padding: 0 8px;
+        }
+      }
+
+      .buyButton {
+        flex: 1;
+        width: 188px;
+        height: 36px;
+        background-color: $primary-yellow;
+        color: $bg-purple;
+        font-family: $font-main;
+        font-weight: $font-weight-bold;
+        font-size: $font-size-md;
+        border-radius: 6px;
+        text-transform: uppercase;
+        transition: filter 0.2s ease;
+
+        &:hover {
+          filter: brightness(0.92);
+        }
+      }
+    }
+  }
+}

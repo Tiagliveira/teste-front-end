@@ -1,0 +1,66 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.carouselWrapper {
+  position: relative;
+  width: $container-standard;
+  margin: 0 auto;
+
+  .cardsTrack {
+    display: flex;
+    gap: 18px; 
+    width: 100%;
+    padding: 20px 0;
+    margin: -20px 0;
+  }
+
+  .cardItem {
+    width: 304px;
+    height: 500px;
+    flex-shrink: 0;
+  }
+
+  .navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: $bg-card;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    @include flex-center;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+
+    img {
+      width: 7.47px;
+      height: 12.8px;
+      object-fit: contain;
+    }
+
+    &:hover:not(:disabled) {
+      transform: translateY(-50%) scale(1.08);
+      box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.24);
+    }
+
+    &:active:not(:disabled) {
+      transform: translateY(-50%) scale(0.95);
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+  }
+
+  .prevButton {
+    left: -40px;
+  }
+
+  .nextButton {
+    right: -40px;
+  }
+}
