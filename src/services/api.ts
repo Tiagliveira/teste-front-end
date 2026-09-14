@@ -1,10 +1,12 @@
 import axios from 'axios';
 import type { ApiResponse, Product } from '../types/types';
 
-// URL com o caminho exato do arquivo .json
-const DEFAULT_URL = "https://devclub-institucional-dockerfile.5scnjc.easypanel.host/produtos.json";
+const BASE_URL = import.meta.env.VITE_API_URL || "https://devclub-institucional-dockerfile.5scnjc.easypanel.host/produtos.json";
 
-const API_URL = import.meta.env.VITE_API_URL || DEFAULT_URL;
+// Garante que a URL sempre termine com /produtos.json se alguém esquecer na variável
+const API_URL = BASE_URL.endsWith('/produtos.json')
+    ? BASE_URL
+    : `${BASE_URL.replace(/\/$/, '')}/produtos.json`;
 
 export const fetchProducts = async (): Promise<Product[]> => {
     try {
