@@ -1,4 +1,4 @@
-import type { Product } from './product';
+import type { Product } from './types';
 
 export interface ModalProps {
     isOpen: boolean;
