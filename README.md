@@ -29,7 +29,7 @@ Projeto desenvolvido em React, TypeScript e SCSS para o teste técnico da Econve
 
 1. **Clone o repositório:**
   ```bash
-  git clone [https://github.com/Tiagliveira/teste-front-end.git](https://github.com/Tiagliveira/teste-front-end.git)
+  git clone https://github.com/Tiagliveira/teste-front-end.git
    ````
 2. **Acessar o diretório do projeto**
   ```bash
