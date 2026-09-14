@@ -2,7 +2,7 @@ import axios from 'axios';
 import type { ApiResponse, Product } from '../types/types';
 
 const API_URL =
-    "https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json";
+    "/app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json";
 
 export const fetchProducts = async (): Promise<Product[]> => {
     try {
